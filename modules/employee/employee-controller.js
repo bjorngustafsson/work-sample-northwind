@@ -11,7 +11,10 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
              EmployeeListService,
              $filter
     ) {
-        EmployeeListService.query({}, function(data) { //callback
+        $scope.loading = true;  //Used for gif animation
+
+        EmployeeListService.query({}, function(data) {
+            $scope.loading = false;
             $scope.employees = data.value; //In json response employees is in array called values
 
             //Show first employee on load.

@@ -1,5 +1,6 @@
 <div class="container">
     <section class="flex">
+        <img src="img/loading.gif" data-ng-hide="!loading">
         <ul>
             <li data-ng-repeat="employee in employees">
                 <a href="" data-ng-click="selectEmployee(employee.EmployeeID)" data-ng-class="employee.isActive ? 'inactive' : ''">
