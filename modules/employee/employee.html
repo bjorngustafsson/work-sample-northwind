@@ -2,8 +2,8 @@
     <section class="flex">
         <ul>
             <li data-ng-repeat="employee in employees">
-                <a href="" data-ng-click="selectEmployee(employee.EmployeeID)">
-                {{employee.EmployeeID}} {{employee.FirstName}} {{employee.LastName}}
+                <a href="" data-ng-click="selectEmployee(employee.EmployeeID)" data-ng-class="employee.isActive ? 'inactive' : ''">
+                {{employee.EmployeeID}}. {{employee.FirstName}} {{employee.LastName}}
                 </a>
             </li>
         </ul>
@@ -13,7 +13,7 @@
             <li>Last name: {{selectedEmployee.LastName}}</li>
             <li>First name: {{selectedEmployee.FirstName}}</li>
             <li>Title: {{selectedEmployee.Title}}</li>
-            <li>BirthDate: {{selectedEmployee.BirthDate}}</li>
+            <li>BirthDate: {{selectedEmployee.BirthDate | date:'yyyy-MM-dd'}}</li>
             <li>Address: {{selectedEmployee.Address}}</li>
         </ul>
     </section>

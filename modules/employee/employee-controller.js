@@ -16,6 +16,8 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
 
             //Show first employee on load.
             $scope.selectedEmployee = $scope.employees[0];
+            $scope.selectedEmployee.isActive = true;
+
             removePrefixFromEncodedPhoto();
         });
 
@@ -31,6 +33,10 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
                 alert("Chosen employee not found");
             }
             removePrefixFromEncodedPhoto();
+
+            angular.forEach($scope.employees, function(value, key){
+                $scope.employees[key].isActive = (value.EmployeeID === id) ? true : false;
+            });
         };
 
         function removePrefixFromEncodedPhoto() {
@@ -39,5 +45,6 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
             $scope.imgSource = "data:image/bmp;base64, " + $scope.selectedEmployee.Photo;
 
         }
+
     }
 ]);

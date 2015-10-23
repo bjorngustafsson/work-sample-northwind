@@ -8,3 +8,9 @@
     -webkit-flex: 1;
     flex: 1;
 }
+
+.inactive {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+}
