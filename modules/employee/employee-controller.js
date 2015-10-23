@@ -16,7 +16,7 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
 
             //Show first employee on load.
             $scope.selectedEmployee = $scope.employees[0];
-
+            removePrefixFromEncodedPhoto();
         });
 
         $scope.selectEmployee = function(id) {
@@ -28,8 +28,16 @@ workSampleAppEmployeeListController.controller('EmployeeListCtrl', [
             if (found.length) {
                 $scope.selectedEmployee = found[0];
             } else {
-                $scope.selectedEmployee = 'Not found';
+                alert("Chosen employee not found");
             }
+            removePrefixFromEncodedPhoto();
         };
+
+        function removePrefixFromEncodedPhoto() {
+            /*remove prefix that comes from OLE DB to be able to show encoded img*/
+            $scope.selectedEmployee.Photo = $scope.selectedEmployee.Photo.replace('FRwvAAIAAAANAA4AFAAhAP////9CaXRtYXAgSW1hZ2UAUGFpbnQuUGljdHVyZQABBQAAAgAAAAcAAABQQnJ1c2gAAAAAAAAAAAAgVAAA', '');
+            $scope.imgSource = "data:image/bmp;base64, " + $scope.selectedEmployee.Photo;
+
+        }
     }
 ]);
