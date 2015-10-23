@@ -2,12 +2,20 @@
     <section class="flex">
         <ul>
             <li data-ng-repeat="employee in employees">
-                <a href="">
+                <a href="" data-ng-click="selectEmployee(employee.EmployeeID)">
                 {{employee.EmployeeID}} {{employee.FirstName}} {{employee.LastName}}
                 </a>
             </li>
         </ul>
     </section>
-    <section class="flex">Contents</section>
+    <section class="flex">
+        <ul>
+            <li>Last name: {{selectedEmployee.LastName}}</li>
+            <li>First name: {{selectedEmployee.FirstName}}</li>
+            <li>Title: {{selectedEmployee.Title}}</li>
+            <li>BirthDate: {{selectedEmployee.BirthDate}}</li>
+            <li>Address: {{selectedEmployee.Address}}</li>
+        </ul>
+    </section>
     <section class="flex">Image</section>
 </div>
