@@ -1,9 +1,13 @@
-<section>
-    <ul>
-        <li data-ng-repeat="employee in employees">
-            <a href="">
-            {{employee.EmployeeID}} {{employee.FirstName}} {{employee.LastName}}
-            </a>
-        </li>
-    </ul>
-</section>
+<div class="container">
+    <section class="flex">
+        <ul>
+            <li data-ng-repeat="employee in employees">
+                <a href="">
+                {{employee.EmployeeID}} {{employee.FirstName}} {{employee.LastName}}
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="flex">Contents</section>
+    <section class="flex">Image</section>
+</div>

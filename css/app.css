@@ -1,0 +1,10 @@
+/*-------------Employee----------*/
+.container {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex {
+    -webkit-flex: 1;
+    flex: 1;
+}
