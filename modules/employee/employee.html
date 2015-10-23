@@ -16,6 +16,7 @@
             <li>Title: {{selectedEmployee.Title}}</li>
             <li>BirthDate: {{selectedEmployee.BirthDate | date:'yyyy-MM-dd'}}</li>
             <li>Address: {{selectedEmployee.Address}}</li>
+            <li><a href="#/employee/connectedOrders/{{selectedEmployee.EmployeeID}}">Orders connected to me</a></li>
         </ul>
     </section>
     <section class="flex">

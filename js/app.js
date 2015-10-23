@@ -4,7 +4,9 @@
 var baseAppModule = angular.module('workSampleApp', [
     'ngRoute',
     'workSampleAppEmployeeListController',
-    'workSampleAppEmployeeListService'
+    'workSampleAppEmployeeConnectedOrdersController',
+    'workSampleAppEmployeeListService',
+    'workSampleAppEmployeeConnectedOrdersService'
 ]);
 
 baseAppModule.config(['$routeProvider',
@@ -14,9 +16,9 @@ baseAppModule.config(['$routeProvider',
                 templateUrl: '/modules/employee/employee.html',
                 controller: 'EmployeeListCtrl'
             }).
-            when('/', {
-                templateUrl: '/modules/employee/employee.html',
-                controller: 'EmployeeListCtrl'
+            when('/employee/connectedOrders/:EmployeeID', {
+                templateUrl: '/modules/employee/employee-connected-orders.html',
+                controller: 'EmployeeConnectedOrdersCtrl'
             }).
             otherwise({
                 redirectTo: '/employees'
