@@ -1,16 +1,50 @@
 /*-------------Employee----------*/
-.container {
-    display: -webkit-flex;
-    display: flex;
-}
-
-.flex {
-    -webkit-flex: 1;
-    flex: 1;
+body {
+    padding: 1rem;
 }
 
 .inactive {
     pointer-events: none;
     cursor: default;
     opacity: 0.5;
+}
+
+.employee  {
+    display: inline-block;
+    vertical-align:top;
+    padding: 1rem;
+}
+
+.employee-list {
+    width: 200px;
+    font-size: 18px;
+}
+
+.employee,
+.employee-list ul
+{
+    padding-left: 0;
+}
+.no-underline:link,
+.no-underline:visited,
+.no-underline:hover,
+.no-underline:active
+{
+    text-decoration: none;
+}
+
+.no-disc {
+    list-style-type: none;
+}
+
+.employee-text {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.employee-item {
+    margin-bottom: 10px;
 }

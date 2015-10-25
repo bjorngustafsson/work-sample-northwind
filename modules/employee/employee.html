@@ -1,25 +1,32 @@
-<div class="container">
-    <section class="flex">
+<div class="employee-container">
+
+    <section class="employee employee-list">
         <img src="img/loading.gif" data-ng-hide="!loading">
-        <ul>
-            <li data-ng-repeat="employee in employees">
-                <a href="" data-ng-click="selectEmployee(employee.EmployeeID)" data-ng-class="employee.isActive ? 'inactive' : ''">
-                {{employee.EmployeeID}}. {{employee.FirstName}} {{employee.LastName}}
+        <ul class="no-disc">
+            <li data-ng-repeat="employee in employees" class="employee-item">
+                <a href="" data-ng-click="selectEmployee(employee.EmployeeID)" data-ng-class="employee.isActive ? 'inactive' : ''" class="no-underline">
+                    <span class="label label-default">{{employee.EmployeeID}}. {{employee.FirstName}} {{employee.LastName}}</span>
                 </a>
             </li>
         </ul>
     </section>
-    <section class="flex">
-        <ul>
-            <li>Last name: {{selectedEmployee.LastName}}</li>
-            <li>First name: {{selectedEmployee.FirstName}}</li>
-            <li>Title: {{selectedEmployee.Title}}</li>
-            <li>BirthDate: {{selectedEmployee.BirthDate | date:'yyyy-MM-dd'}}</li>
-            <li>Address: {{selectedEmployee.Address}}</li>
-            <li><a href="#/employee/connectedOrders/{{selectedEmployee.EmployeeID}}">Orders connected to me</a></li>
+
+    <section class="employee employee-details">
+        <ul class="no-disc">
+            <li>Last name: <span class="employee-text">{{selectedEmployee.LastName}}</span></li>
+            <li>First name: <span class="employee-text">{{selectedEmployee.FirstName}}</span></li>
+            <li>Title: <span class="employee-text">{{selectedEmployee.Title}}</span></li>
+            <li>BirthDate: <span class="employee-text">{{selectedEmployee.BirthDate | date:'yyyy-MM-dd'}}</span></li>
+            <li>Address: <span class="employee-text">{{selectedEmployee.Address}}</span></li>
+            <li>
+                <a class="no-underline uppercase" data-ng-href="#/employee/connectedOrders/{{selectedEmployee.EmployeeID}}">
+                    <span class="label label-warning">Orders connected to me &gt;</span>
+                </a>
+            </li>
         </ul>
     </section>
-    <section class="flex">
+
+    <section class="employee employee-image">
         <img id="employeeImage" data-ng-src="{{imgSource}}">
     </section>
 </div>
